@@ -1,3 +1,14 @@
+/***********
+Smaple input & output.
+haojianjin$ ./test
+9	5	4	1	merge input 1
+8	6	2	0	merge input 2
+9	8	6	5	4	2	1	0 output.
+
+Two implementations were included. One for in-place, the other wouldn't change the original list.
+
+************/
+
 #include <stdio.h>
 #include <stdlib.h>
 
