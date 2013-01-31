@@ -23,6 +23,7 @@ Node *initLinkedList(int *array, int length){
 	return res;
 }
 
+//not a in-place merge.
 Node *MergeLists(Node *listA, Node *listB){
 	Node *res = NULL;
 	Node **resHead = &res;
@@ -42,9 +43,42 @@ Node *MergeLists(Node *listA, Node *listB){
 		resHead = &((*resHead)->next);
 	}
 	*resHead = curNode1 ? curNode1 : curNode2;
-
 	return res;
 }
+
+//in-place merge.
+Node *MergeLists_inplace(Node *listA, Node *listB){
+	Node *res = NULL;
+	Node *curNode = NULL;
+	
+	while(listA && listB){
+		if(listA->data > listB->data){
+			if(res == NULL){
+				res = listA;
+				curNode = res;
+			}
+			else{
+				curNode->next = listA;
+				curNode = curNode->next;
+			}
+			listA = listA->next;
+		}
+		else{
+			if(res == NULL){
+				res = listB;
+				curNode = res;
+			}
+			else{
+				curNode->next = listB;
+				curNode = curNode->next;
+			}
+			listB = listB->next;
+		}
+	}
+	curNode->next = listA ? listA : listB;
+	return res;
+}
+
 
 void PrintList(Node *list){	
 	while(list){
@@ -64,6 +98,6 @@ int main(){
 	
 	PrintList(list1);
 	PrintList(list2);
-	PrintList(MergeLists(list1, list2));
+	PrintList(MergeLists_inplace(list1, list2));
 	return 0;
 }
