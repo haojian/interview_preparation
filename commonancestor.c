@@ -17,8 +17,6 @@ node* commonAncestor(node *nodeA, node *nodeB, node *root){
 }
 
 int initBTree(node *node){
-	
-	
 	(*root)->val = 100;
 	(*root)->leftChild = 
 	(*root)->rightChild = 

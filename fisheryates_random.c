@@ -1,3 +1,7 @@
+/*
+	this function is used to get the unique random one by one in a integer pool.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
