@@ -1,0 +1,3 @@
+/*
+	How to use a fair coin to simulate an unfair coin with probability p.
+*/
