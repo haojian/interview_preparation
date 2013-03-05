@@ -36,6 +36,38 @@ check for duplicate numbers on each box
 		
 	}
 	
+	//all of the i should be from 0
+	public boolean rowCheck(int i){
+		return false;
+	}
 	
+	public boolean columnCheck(int i){
+		return false;
+	}
 	
+	public boolean boxCheck(int i){
+		int sum = 0;
+		int startColum = (i%3) *3;
+		int startRow = ((int) (i/3)) * 3;
+		for(int k =0; k< 3; k++)
+			for(int j = 0; j<3; j++){
+				sum += sudoku[startRow+k][startColum+j];
+			}
+		if(sum != 45)
+			return false;
+		else
+			return true;
+	}
+	
+	public boolean duplicateInRow(int i){
+		return false;
+	}
+	
+	public boolean duplicateInColum(int i){
+		return false;
+	}
+	
+	public boolean duplicateInBox(int i){
+		return false;
+	}
 }
