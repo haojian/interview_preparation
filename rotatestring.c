@@ -8,6 +8,24 @@ So here is the simple code which does that.
 
 
 http://crackprogramming.blogspot.com/2012/10/rotate-given-string-by-position.html
+
+Complexity of the code
+Assuming that length of string is 'N'.
+1. Finding length of the string - O(N)
+2. First reversal takes O(N/2) time
+3. Second reversal takes O(k/2) time
+4. Last reversal takes O(N-k/2) time
+So total time taken is O(2N). Space requirement is almost constant.
+This was definitely not the way I thought of when reading this problem. I will explain in my next blog post how I solved it.
+Fun time - Break the code
+1. str="abcdef", k=3. Output="defabc"
+2. str="abcdef", k=0. Output="abcdef"
+3. str="abcdef", k=6. Output="abcdef"
+4. str="adcdef", k=13. Output="fabcde"
+5. NULL and empty string.
+6. String with one character.
+
+
 */
 
 
