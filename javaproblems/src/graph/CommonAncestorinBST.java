@@ -3,7 +3,7 @@ package graph;
 
 /*Find the least common ancestor in a Binary Search Tree.
 
-done in c.
+done in c. 
  * */
 public class CommonAncestorinBST {
 
