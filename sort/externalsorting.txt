@@ -1,0 +1,10 @@
+===================
+How to sort a really big number of integers if you only have a buffer of size 100
+===================
+
+
+This is known as an external sort. For example, maybe you have a 900 MB file of integers and you want to sort it on a machine with 100 MB of RAM.
+
+The idea is you read in a 100 MB chunk, sort it (say with quicksort), and then write that back to disk. Rinse and repeat, leaving you with a sequence of sorted chunks stored on disk, each of size 100 MB, which now need to be merged.
+
+There are a few ways to merge them. One way is to read in, say, the first 10 MB of the first nine chunks and then use the remaining 10 MB of memory to store the result of merging those nine minichunks. Of course, you'll fill up the output buffer before you finish sorting them all, so when it's full you write it to disk, clear it, and proceed. When one of the 10 MB minichunks is exhausted you just replace it with another 10 MB minichunk from disk which hasn't been merged in yet.
