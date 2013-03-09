@@ -1,7 +1,3 @@
-Haojian Jin.  :)
-Homepage: http://shift-3.com
-Github: https://github.com/haojian
-
 Q. Write an iterator over combinations of options, as described in the example:
 
 {{1, 2, 3} {a, b} {d, e, f}} ->
@@ -20,6 +16,49 @@ http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Iterator.html
 so there are 18 possibilities for that example?
 
 
+{
+	List<List<T>> res = new List<List<T>>();
+	for(int i = 0; i<optionLists.size(); i++){
+		solutionCounter *= optionList.get(i).size();
+	}
+	for(int i =0; i<solutionCounter; i++){
+		List<T> singlelist = new List<T>();
+		for(int j=0; j< optionLists.size(); j++){
+			int index = getTrackIndex(i, j, opentionLists);
+			singleList.add(optionsLists.get(j).get(index));
+		}
+		res.add(singlelist);
+	}
+}
+
+getTrackIndex(i, j, optionList){
+	int threshold = 1;
+	for(int k=0; k<=j; j++){
+		threshold *= optionList.get(k).size();
+		if(i/threshold){
+			return i%threshold;
+		}
+	}
+	return -1;
+}
+	
+	
+	
+	
+	int index = 0;
+	while(i/optionList.get(index).size()){
+		
+	}
+	ArrayList<int> decoding = new ArrayList<int>();
+	
+}
+
+int length = lists.size();
+for(int i=0; i< length; i++){
+	for(int j =0; j< lists.get(i).size(); j++){
+		res.
+	}
+}
 
 T = List<List<T>>.get(index)
 C int[][] array  4* 5. 
@@ -41,13 +80,17 @@ http://docs.oracle.com/javase/6/docs/api/java/util/List.html
         for(List<T> subList: optionLists){
             //get the candidate based on i & j.
             //%
+            int curCandidateIndex = getTrackerIndex(i, j, optionLists);
+            singlelist.add(subList.get(curCandidateIndex));
             j++;
-            singlelist.add(subList.get(trackerindex));
-            trackerindex = getTrackerIndex(i, optionLists, j);
         }
         res.add(singlelsit);
     }
     return res.iterator();
+}
+
+int getTrackerIndex(int i, int j, List<List<T>> optionLists){
+	int targetListSize = 
 }
 
 int getTrackerIndex(int i,  List<List<T>> optionLists, int j){
