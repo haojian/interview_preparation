@@ -48,11 +48,18 @@ public class Comb_listoflist {
 	}
 	
 	public static int getTrackIndex(int i, int j, ArrayList<ArrayList<String>> lists){
-		int factor = 1;
-		for(int k = j; k<lists.size(); k++){
-			factor *= lists.get(k).size();
+		int factorA = 1;
+		int factorB = 1;
+		for(int k = 0; k<j; j++){
+			factorA *= lists.get(k).size();
 		}
-		return i%factor;
+		for(int k=j; k<lists.size(); k++){
+			factorB *= lists.get(k).size();
+		}
+
+		int index = i%factorB/factorA;
+		System.out.println(i + "\t"+ j + "\t" + index);
+		return index;
 	}
 
 }
