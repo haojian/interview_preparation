@@ -34,8 +34,8 @@ Fun time - Break the code
 void reverseString(char* str, int si, int ei){
 	while(si < ei){
 		str[si] = str[si] ^ str[ei];
-		str[back] = str[si] ^ str[ei];
-		str[front] = str[si] ^ str[ei];
+		str[ei] = str[si] ^ str[ei];
+		str[si] = str[si] ^ str[ei];
 		++si;
 		--back;
 	}
