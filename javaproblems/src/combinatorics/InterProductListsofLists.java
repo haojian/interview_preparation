@@ -58,5 +58,37 @@ public class InterProductListsofLists {
 			System.out.println("\n");
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void process(ArrayList<ArrayList<String>> listsoflists){
+		ArrayList<ArrayList<String>> outputset = new ArrayList<ArrayList<String>>();
+		for(ArrayList<String> list: listsoflists){
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -1,0 +1,69 @@
+1) Rank the following terms from most to least favorite. There's no right or wrong answer;
+we're most interested in understanding WHY you ranked this list the way you did. Feel free
+to get creative!
+
+O(n) 
+NoSQL 
+hash collisions 
+chicken nuggets 
+O(n log n) 
+retina displays 
+exceptions 
+
+Ranks:
+a). Hash collisions.
+Hashtable provides the amazing performance in lookup. 
+However, the original hash function usually couldn't optimize this performance in the real case. 
+It would be great if we can rewrite the hash function based on the statistics of the map.
+
+b). O(n log n) 
+O(n log n) seems the best time complexity for lots of algorithm. I personally like quick sort very much, 
+although the worst case is not that good. I like the neat style of quick sort, which only have 13-15 lines code.
+
+c). retina displays 
+Although people complain a lot about the time consuming on retina displays, I still like the fancy visual effects on these display. 
+Besides, I am more interested in solving the power consuming problem in software level. Difference color pixels consume different level powers,
+I am sure there is some way to smooth the images to a more power saving level.
+
+d). NoSQL
+Everyone says this is great for scalability, I didn't have too much experience on this part besides some classwork. 
+I am more sticky to the traditional database like PostgreSQL, MSSQL,... But I am willing to learn this fun stuffs.
+
+e). O(n) 
+It seems relative plain.
+
+f). chicken nuggets 
+no idea. i prefer food than the exceptions. ^^
+
+g). exceptions
+Everyone hate exceptions but it happen sometime. 
+
+
+
+
+
+
+2) We are planning to run a promotion for one of TrialPay's new products. To do this, we will
+provide a unique promotion URL to each person who we want to try the promotion. When
+someone visits a valid promotion URL, he/she will be given instructions on how to redeem
+the promotion online if it has not already been redeemed for that specific URL. The
+promotion URLs will distributed to a large percentage of TrialPay's hundreds of millions
+of current customers through email. We will also want to distribute promotion URLs
+physically (e.g. on business cards at sales and marketing events). If you were designing
+these URLs, what factors would you need to consider? What would be the exact
+specifications of the URLs?
+
+Factors:
+1. length. should be as short as possible.
+2. readability and good looking.  some of the characters are not easy to input or read. like “0oO -._~:/?#[]@!$&'()*+,;=.”
+3. security. we need to make sure a random string doesn't work in our system.
+
+So in my design, the URLs should be trialpay.com/t/******. I would pick the length at 6. 
+
+In general case, a url could contain following characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~:/?#[]@!$&'()*+,;="
+However, the "0oO" are quite confusing, and "-._~:/?#[]@!$&'()*+,;=." are head to read and input. 
+So the size of character pools is 25+25+9 = 59.
+Suppose we need to send 100 millions promotion urls, a 5 characters sequence could hold 59^5 = 714,924,299 permutations. 
+However, that means every 7 random strings would contain a valid code. Considering this is very wide spread promotion, I would 
+choose the length at 6 (7 may be better, but the security requirement is not that high demanding in this case). 
+ 
