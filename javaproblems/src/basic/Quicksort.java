@@ -39,8 +39,17 @@ public class Quicksort {
 	}
 	
 	public static void exchange(int A[], int ai, int bi){
+		if(A[ai] == A[bi])
+			return;
+		System.out.println("Before: " + A[ai] + "\t" + A[bi]);
+		A[ai] = A[ai] ^ A[bi];
+		A[bi] = A[ai] ^ A[bi];
+		A[ai] = A[ai] ^ A[bi];
+		System.out.println("After: " + A[ai] + "\t" + A[bi]);
+		/*
 		int tmp = A[ai];
 		A[ai] = A[bi];
 		A[bi] = tmp;
+		*/
 	}
 }
