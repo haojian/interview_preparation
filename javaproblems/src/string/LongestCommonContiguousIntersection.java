@@ -10,7 +10,6 @@ public class LongestCommonContiguousIntersection {
 		// TODO Auto-generated method stub
 		getCommonIntersection(inputA, inputB);
 	}
-
 	
 	public static void getCommonIntersection(char[] lista, char[] listb){
 		int max = -1;
