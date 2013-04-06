@@ -14,35 +14,72 @@ public class RegularExpressionMatching {
 		System.out.println(isMatch("aa",".*"));
 		System.out.println(isMatch("ab",".*"));
 		System.out.println(isMatch("aab","c*a*b"));
-
+		System.out.println(isMatch("a", "ab*"));
+		System.out.println(isMatch("ab", ".*c"));
 	}
 
+	public static boolean isMatch(String s, String p) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+    	return isRecursiveMatch(s, p, 0, 0);
+    }
+	
+	public static boolean isRecursiveMatch_v1(String s, String p, int si, int pi){
+		return false;
+	}
+	
+	public static boolean isRecursiveMatch(String s, String p, int si, int pi){
+		if(s.length() == si && pi == p.length())
+			return true;
+		if(pi == p.length() && si != s.length())
+			return false;
+		if(pi != p.length() && si == s.length()){
+			if(pi<p.length()-1 && p.charAt(pi+1) == '*')
+				return isRecursiveMatch(s, p, si, pi+2);
+			else
+				return false;
+		}
+		 if(pi<p.length()-1 && p.charAt(pi+1) == '*'){
+			 while( si< s.length()  && (s.charAt(si) == p.charAt(pi) || p.charAt(pi) =='.')){
+				 if(isRecursiveMatch(s, p, si, pi+2))
+					 return true;
+				 si++;
+			 }
+			 return isRecursiveMatch(s, p, si, pi+2);
+		 }else{
+			 if(s.charAt(si) == p.charAt(pi) || p.charAt(pi) =='.'){
+				 pi++;
+				 si++;
+				 return isRecursiveMatch(s, p, si, pi);
+			 }else
+				 return false;
+		 }
+	}
+	
+	/*
     public static boolean isMatch(String s, String p) {
         // Start typing your Java solution below
         // DO NOT write main() function
-     
     	int si = 0;
     	int pi = 0;
-    	while(si != s.length()-1 && pi != s.length()-1){
-    		if(pi< p.length()-1 && p.charAt(pi+1) == '*'){
-    			if(p.charAt(pi) == s.charAt(si) || p.charAt(pi) == '.')
+    	while(si < s.length() && pi < p.length()){
+    		if(pi<p.length()-1 && p.charAt(pi+1) == '*')
+    		{
+    			while(si <s.length() && (s.charAt(si) == p.charAt(pi) || p.charAt(pi) =='.'))
     				si++;
-    			else
-    				pi+=2;
-    		}
-    		else{
-    			if(p.charAt(pi) == s.charAt(si) || p.charAt(pi) == '.')
+    			pi+=2;
+    		}else{
+    			if(s.charAt(si) == p.charAt(pi) || p.charAt(pi) =='.')
     			{
     				pi++;
     				si++;
-    			}else
+    			}else{
     				return false;
+    			}
     		}
     	}
-    	
-    	if(si == s.length() -1 && pi == p.length() -1)
+    	if(si==s.length() && pi==p.length())
     		return true;
-    	else
-    		return false;
-    }
+    	return false;
+    }*/
 }

@@ -31,30 +31,18 @@ public class Comb_listoflist {
 	}
 	static int solutionCounter = 1;
 	
-	
-	public static ArrayList<ArrayList<String>> interproduct(ArrayList<ArrayList<String>> lists){
-		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
-		for(ArrayList<String> entity : lists){
-			for(String tmp:entity){
-				
-				addToListsofList(tmp, lists, res);
-			}
-		}
-		return res;
-	}
-	
-	public static void addToListsofList(String tmp, ArrayList<ArrayList<String>> lists, ArrayList<ArrayList<String>> res){
-		
-	}
-	
-	public static ArrayList<ArrayList<String>> comb_recursive(ArrayList<ArrayList<String>> lists){
-		return null;
-	}
-	
-	public static ArrayList<ArrayList<String>> comb_update(ArrayList<String> update, ArrayList<ArrayList<String>> lists){
-		return null;
-	}
 
+	//recursive solution
+	public static ArrayList<ArrayList<String>> comb_recursive(ArrayList<ArrayList<String>> lists){
+		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
+		if(lists.size() == 1){
+			
+		}
+		return null;
+	}
+	
+
+	//non recursive solution:
 	public static ArrayList<ArrayList<String>> comb_nonrecursive(ArrayList<ArrayList<String>> lists){
 		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
 		for(int i =0; i<lists.size(); i++){
