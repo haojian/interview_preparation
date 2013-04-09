@@ -36,7 +36,7 @@ public class Comb_listoflist {
 	public static ArrayList<ArrayList<String>> comb_recursive(ArrayList<ArrayList<String>> lists){
 		ArrayList<ArrayList<String>> res = new ArrayList<ArrayList<String>>();
 		if(lists.size() == 1){
-			
+			//res.add(e)
 		}
 		return null;
 	}
