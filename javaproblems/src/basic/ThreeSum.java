@@ -1,6 +1,7 @@
 package basic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,14 +12,42 @@ public class ThreeSum {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] input = {-1, 0, 1, 2, -1, -4};
-		System.out.println(threeSumBruteForce(input));
+		//int[] input = {-1, 0, 1, 2, -1, -4};
+		int[] input = {0, 0, 0, 0};
+		System.out.println(threeSum(input));
 	}
 	
 	public static ArrayList<ArrayList<Integer>> threeSum(int[] num) {
         // Start typing your Java solution below
         // DO NOT write main() function
-		return null;
+		Arrays.sort(num);
+		ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+		for(int i=0; i<num.length; i++){
+			if(i>0 && num[i] == num[i-1])
+				continue;
+			int j = i + 1;
+			int k = num.length - 1;
+			while(j<k){
+				if( num[j] + num[k] < -num[i]){
+					j++;
+				}else if(num[j] + num[k] > -num[i]){
+					k--;
+				}else{
+					ArrayList<Integer> tmp = new ArrayList<Integer>();
+					tmp.add(num[i]);
+					tmp.add(num[j]);
+					tmp.add(num[k]);
+					res.add(tmp);
+					while(j<num.length-1 && num[j] == num[j+1])
+						j++;
+					while(k<num.length-1 && num[k] == num[k-1])
+						k--;
+					j++;
+					k--;
+				}
+			}
+		}
+		return res;
     }
 	
 	public static ArrayList<ArrayList<Integer>> threeSumBruteForce(int[] num) {
