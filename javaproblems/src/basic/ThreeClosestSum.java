@@ -25,6 +25,8 @@ public class ThreeClosestSum {
     	int minDistance = Integer.MAX_VALUE;
     	int res = Integer.MAX_VALUE;
     	for(int i = 0 ; i< num.length; i++){
+    		
+    		
     		int j = i+1;
     		int k = num.length-1;
     		while(j<k){

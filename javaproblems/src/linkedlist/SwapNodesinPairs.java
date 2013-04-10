@@ -34,6 +34,7 @@ public class SwapNodesinPairs {
 
 }
 
+/*
 class ListNode {
 	int val;
 	ListNode next;
@@ -42,4 +43,4 @@ class ListNode {
 		next = null;
 	}
 	
-}
+}*/
