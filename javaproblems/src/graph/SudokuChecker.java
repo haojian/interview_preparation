@@ -1,5 +1,7 @@
 package graph;
 
+import java.util.HashSet;
+
 public class SudokuChecker {
 
 	/*
@@ -10,6 +12,8 @@ check for duplicate numbers on each row
 check for duplicate numbers on each column
 check for duplicate numbers on each box
 	 */
+	
+	//calculation for each box need to be careful.
 	
 	/**
 	 * @param args
@@ -31,6 +35,47 @@ check for duplicate numbers on each box
 			{2, 8, 9,  5, 3, 1,  4, 6, 7},
 			{5, 1, 7,  4, 6, 8,  2, 3, 9}	
 	};
+	
+    public static boolean isValidSudoku(char[][] board) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+    	HashSet<Character> hash = new HashSet<Character>();
+    	//check colums;
+    	for(int i = 0;i<9; i++){
+    		for(int j=0; j<9; j++){
+    			if(board[i][j]> '0' && board[i][j] <='9'){
+    				if(hash.contains(board[i][j]))
+    					return false;
+    				hash.add(board[i][j]);
+    			}
+    		}
+    		hash.clear();
+    	}
+    	// check rows;
+    	for(int i = 0;i<9; i++){
+    		for(int j=0; j<9; j++){
+    			if(board[j][i]> '0' && board[j][i] <='9'){
+    				if(hash.contains(board[j][i]))
+    					return false;
+    				hash.add(board[j][i]);
+    			}
+    		}
+    		hash.clear();
+    	}
+    	
+    	// check blocks;
+    	for(int i = 0;i<9; i++){
+    		for(int j=0; j<9; j++){
+    			if(board[i/3*3+j/3][i%3*3+j%3]> '0' && board[i/3*3+j/3][i%3*3+j%3] <='9'){
+    				if(hash.contains(board[i/3*3+j/3][i%3*3+j%3]))
+    					return false;
+    				hash.add(board[i/3*3+j/3][i%3*3+j%3]);
+    			}
+    		}
+    		hash.clear();
+    	}
+    	return true;
+    }
 	
 	public SudokuChecker(){
 		
