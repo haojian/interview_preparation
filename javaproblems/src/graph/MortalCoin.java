@@ -21,14 +21,14 @@ public class MortalCoin {
 				blockedPointCounter--;
 			}
 		}
-		exploreSolutionRecursive
+		//exploreSolutionRecursive
 	}
 	
-	public static void exploreSolutionRecursive(int completeGridCounter, int[][] boarder, int ){
-		if(completeGridCounter == boarder.length * boarder.length)
+	public static void exploreSolutionRecursive(int completeGridCounter, int[][] boarder){
+		//if(completeGridCounter == boarder.length * boarder.length)
 	}
 	
 	public static boolean ifComplete(int[][] boarder){
-		
+		return false;
 	}
 }
