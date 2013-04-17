@@ -23,7 +23,7 @@ Note: Given n will be between 1 and 9 inclusive.
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		System.out.println(getPermutation(3,6));
 	}
 	
 	public static String getPermutation(int n, int k) {
@@ -31,16 +31,40 @@ Note: Given n will be between 1 and 9 inclusive.
 	        // DO NOT write main() function
 	        String tmp = "";
 	        for(int i=0; i<n; i++){
-	        	tmp += '1'+i;
+	        	tmp += (char)('1'+i);
 	        }
 	        String res = tmp;
-	        for(int i=0; i<k; i++){
+	        for(int i=0; i<k-1; i++){
 	        	res = getNextPermutation(res);
 	        }
 	        return res;
 	}
 	
 	public static String getNextPermutation(String input) {
-        
+		
+		int si = -1;
+		int ei= -1;
+		for(int i= 0;i<input.length()-1; i++){
+			for(int j=i+1; j<input.length(); j++){
+				if(input.charAt(i) < input.charAt(j)){
+					si = i;
+					ei = j;
+				}
+			}
+		}
+		char[] array = input.toCharArray();
+		char tmp = array[si];
+		array[si] = array[ei];
+		array[ei] = tmp;
+		si++;
+		ei = input.length()-1;
+		while(si<ei){
+			tmp = array[si];
+			array[si] = array[ei];
+			array[ei] = tmp;
+			si++;
+			ei--;
+		}
+        return new String(array);
     }
 }
