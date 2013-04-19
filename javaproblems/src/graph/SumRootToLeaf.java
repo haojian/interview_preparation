@@ -40,22 +40,26 @@ Return the sum = 12 + 13 = 25.
     public static int sumNumbers(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
-        int res = 0;
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode traverseNode = root;
-        int tmpnum = 0;
-        while(traverseNode!= null || stack.size() != 0){
-        	while(traverseNode != null){
-        		tmpnum = traverseNode.val + tmpnum*10;
-        		stack.push(traverseNode);
-        		traverseNode = traverseNode.left;
-        	}
-        	res += tmpnum;
-        	tmpnum /=10;
-        	traverseNode = stack.pop();
-        	traverseNode = traverseNode.right;
-        }
-        return res;
+    	if(root == null)
+    		return 0;
+    	int[] sum = new int[1];
+    	sum[0] = 0;
+    	sumNumbersRecur(root, 0, sum);
+    	return sum[0];
+    }
+    
+    public static void sumNumbersRecur(TreeNode root, int curNum, int[] sum){
+    	if(root != null && root.left == null && root.right == null){
+    		curNum = root.val + curNum * 10;
+    		sum[0] += curNum;
+    		//curNum/=10;
+    		return;
+    	}
+    	if(root == null)
+    		return;
+    	curNum = root.val + curNum * 10;
+    	sumNumbersRecur(root.left, curNum, sum);
+    	sumNumbersRecur(root.right, curNum, sum);
     }
     
 }
