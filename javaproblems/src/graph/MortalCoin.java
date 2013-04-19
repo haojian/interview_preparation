@@ -19,7 +19,7 @@ public class MortalCoin {
 
 	    public static void main(String[] args) throws Exception { 
 
-	        name = "hajitest"; pw = "hajitest"; 
+	        name = "haojian"; pw = "haojian"; 
 	        MortalCoin mcs = new MortalCoin(); 
 	        while (true) { 
 	            mcs.go(); 

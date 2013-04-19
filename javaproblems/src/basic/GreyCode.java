@@ -39,13 +39,4 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 			 res.add((i>>1)^i);
 		 return res;
     }
-	
-	public static void grayCode(int tmp, int length, ArrayList<Integer> res){
-		if(length == 0){
-			res.add(tmp);
-			return;
-		}
-		grayCode((tmp<<1)+1, length-1, res);
-		grayCode((tmp<<1)+0, length-1, res);
-	}
 }
