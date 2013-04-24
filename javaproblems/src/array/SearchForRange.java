@@ -22,10 +22,10 @@ public class SearchForRange {
             else if(A[mid] == target){
                 int rsi = mid;
                 int rei = mid;
-                while(rsi >=si && A[rsi] == target){
+                while(rsi >si && A[rsi-1] == target){
                     rsi--;
                 }
-                while(rei<ei && A[rei] == target){
+                while(rei < ei-1 && A[rei+1] == target){
                     rei++;
                 }
                 
