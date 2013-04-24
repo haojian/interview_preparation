@@ -1,0 +1,7 @@
+Notes:
+
+/***************************************
+Three sum
+	Avoid repeat case in duplicate numbers. say {0, 0, 0, 0}.
+	Check the duplicate at the beginning and the "adding" operation. 
+****************************************/
