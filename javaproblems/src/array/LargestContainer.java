@@ -8,9 +8,19 @@ public class LargestContainer {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] input ={3,5,5,2,5,5,6,6,4,4,1,1,2,5,5,6,6,4,1,3};
-		System.out.println(getSize(input));
+		System.out.println(getSizeBruteForce(input));
 	}
 	
+	public static int getSizeBruteForce(int A[]){
+		int max= 0;
+		for(int i=0; i<A.length; i++){
+			for(int j=i+1; j<A.length; j++){
+				int size = Math.min(A[i], A[j]) * (j-i);
+				max = max>size?max:size;
+			}
+		}
+		return max;
+	}
 	
 	public static int getSize(int A[]){
 		if(A.length < 2)
