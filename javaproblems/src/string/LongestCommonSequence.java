@@ -7,7 +7,27 @@ public class LongestCommonSequence {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(LongestCommonSequence("XMJYAUZ", "MZJAWXU"));
+		System.out.println(LongestCommonSequenceV2("XMJYAUZ", "MZJAWXU"));
+	}
+	
+	public static String LongestCommonSequenceV2(String a, String b){
+		String[][] dp = new String[a.length()+1][b.length()+1];
+		for(int i=0; i<=a.length(); i++){
+			for(int j=0; j<=b.length(); j++){
+				dp[i][j]="";
+			}}
+		String max = "";
+		for(int i=0; i<a.length(); i++){
+			for(int j=0; j<b.length(); j++){
+				if(a.charAt(i) == b.charAt(j)){
+					dp[i+1][j+1] = dp[i][j]+a.charAt(i);
+				}else{
+					max = dp[i][j+1].length()>dp[i+1][j].length()?dp[i][j+1]:dp[i+1][j];
+					dp[i+1][j+1] = max; 
+				}
+			}
+		}
+		return dp[a.length()][b.length()];
 	}
 
 	public static String LongestCommonSequence(String a, String b){
