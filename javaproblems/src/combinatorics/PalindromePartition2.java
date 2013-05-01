@@ -23,13 +23,13 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 	}
 	
 	public static int minCutv2(String s){
+		if(s==null || s.length()==0)
+			return 0;
 		int[] mincuts = new int[s.length()];
 		int[] palindStartIndexEndhere = new int[s.length()];
 		mincuts[0] =0;
 		palindStartIndexEndhere[0] = 0;
 		for(int i=1; i<s.length(); i++){
-			if(i== 2)
-				System.out.println("debugged");
 			if(isPalindrome(s.substring(0, i+1))){
 				mincuts[i] = 0;
 				palindStartIndexEndhere[i] = 0;

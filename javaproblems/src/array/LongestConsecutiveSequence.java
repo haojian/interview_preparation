@@ -42,7 +42,6 @@ public class LongestConsecutiveSequence {
     		max -= offset;
     		res = Math.max(res, max);
     	}
-    	
     	return res;
     }
 
