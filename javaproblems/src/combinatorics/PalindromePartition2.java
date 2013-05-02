@@ -19,7 +19,7 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(minCutv2("cdd"));
+		System.out.println(minCutv2("ababbbabbaba"));
 	}
 	
 	public static int minCutv2(String s){
