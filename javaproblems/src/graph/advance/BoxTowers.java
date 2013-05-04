@@ -28,7 +28,6 @@ public class BoxTowers {
 	        		return;
 	        	for(int j=0; j<3;j++){
 	        		bt.boxes[i][j] = Integer.valueOf(dimensions[j]);
-	        		
 	        	}
 	            
 	        }

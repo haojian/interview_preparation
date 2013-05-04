@@ -98,6 +98,7 @@ public class LRUCache {
 				if(endNode != null){
 					map.remove(endNode.key);
 					endNode.pre.nxt = null;
+					endNode = endNode.pre;
 				}
 			}
 		 }
@@ -108,7 +109,9 @@ public class LRUCache {
 			 map.get(key).pre.nxt = map.get(key).nxt;
 		 
 			 map.get(key).nxt = pseudoNode.nxt;
-			 pseudoNode.nxt.pre = map.get(key);
+			 if(pseudoNode.nxt != null)
+				 pseudoNode.nxt.pre = map.get(key);
+
 		 
 			 pseudoNode.nxt = map.get(key);
 			 map.get(key).pre = pseudoNode;
