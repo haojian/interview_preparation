@@ -1,11 +1,6 @@
 package graph;
 
-
-/*Find the least common ancestor in a Binary Search Tree.
-
-done in c. 
- * */
-public class CommonAncestorinBST {
+public class UniqueBST {
 
 	/**
 	 * @param args
