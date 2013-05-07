@@ -51,7 +51,7 @@ Bonus point if you are able to do this using only O(n) extra space, where n is t
     		for(int i=lastIndex; i<=lastIndex+1;i++){
     			indexPath.add(i);
     			int tmp = curRow.get(i)+cursum;
-    			minimumTotalRecur(triangle, indexPath, tmp, minsum);
+    				minimumTotalRecur(triangle, indexPath, tmp, minsum);
     			indexPath.remove(indexPath.size()-1);
     		}
     	}
