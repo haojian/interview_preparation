@@ -80,7 +80,7 @@ public class Dikstra {
 
 }
 
-
+/*
 class Vertex implements Comparable<Vertex>{
 	public String name;
 	public ArrayList<Edge> adjacencies;
@@ -89,6 +89,15 @@ class Vertex implements Comparable<Vertex>{
 	public Vertex(String name){
 		this.name = name;
 		adjacencies = new ArrayList<Edge>();
+	}
+	
+	public int findEdge(Vertex target){
+		for(int i=0; i<adjacencies.size(); i++){
+			if(adjacencies.get(i).target.name.equals(target.name)){
+				return i;
+			}
+		}
+		return -1;
 	}
 	
 	public String toString(){
@@ -108,3 +117,4 @@ class Edge{
 		this.weight = argWeight;
 	}
 }
+*/

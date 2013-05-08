@@ -11,11 +11,12 @@ public class DijkstraV2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-    Vertex v0 = new Vertex("0Redvile");
-	Vertex v1 = new Vertex("1Blueville");
-	Vertex v2 = new Vertex("2Greenville");
-	Vertex v3= new Vertex("3rangeville");
-	Vertex v4 = new Vertex("4Purpleville");
+		/*
+    Vertex v0 = new Vertex("0");
+	Vertex v1 = new Vertex("1");
+	Vertex v2 = new Vertex("2");
+	Vertex v3= new Vertex("3");
+	Vertex v4 = new Vertex("4");
 
 	v0.adjacencies.add(new Edge(v1, 5));
 	v0.adjacencies.add( new Edge(v2, 10));
@@ -37,30 +38,18 @@ public class DijkstraV2 {
 
 	Vertex[] vertices = { v0, v1, v2, v3, v4 };
 	computePath(v0, v4);
-    
+	*/
+		/*
+		Vertex v0 = new Vertex("0");
+		Vertex v1 = new Vertex("1");
+		Vertex v2 = new Vertex("2");
+		v0.adjacencies.add(new Edge(v1, 1));
+		v0.adjacencies.add( new Edge(v2, 100));
+		v1.adjacencies.add(new Edge(v2, 101));
+		computePath(v0, v2);
+		*/
 	}
-	/*
-	public static ArrayList<Vertex> getPath(Vertex source, Vertex target){
-		source.minDistance = 0;
-		 ArrayList<Vertex> visitedQueue = new ArrayList<Vertex>();
-		 PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
-		 vertexQueue.add(source);
-		 while(!vertexQueue.isEmpty()){
-			 Vertex u = vertexQueue.poll();
-			 
-			 for(Edge e:u.adjacencies){
-					Vertex v = e.target;
-					double weight = e.weight;
-					double distanceThroughU = u.minDistance+weight;
-					if(distanceThroughU < v.minDistance){
-						vertexQueue.remove(v);
-						v.minDistance = distanceThroughU;
-						v.previous = u;
-						vertexQueue.add(v);
-					}
-				}
-		 }
-	}*/
+
 	
 	public static void computePath(Vertex source, Vertex target){
 		source.minDistance = 0;
@@ -73,7 +62,7 @@ public class DijkstraV2 {
 			if(u == target){
 				System.out.println("Distance to " + target + ": " + target.minDistance);
 			    ArrayList<Vertex> path = getShortestPathto(target);
-			    System.out.println("Path: " + path);
+			    System.out.println("Shortest Path: " + path);
 				break;
 			}
 			for(Edge e:u.adjacencies){
