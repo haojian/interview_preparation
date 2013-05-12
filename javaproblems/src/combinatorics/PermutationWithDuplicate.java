@@ -9,7 +9,7 @@ public class PermutationWithDuplicate {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int a[] = {-1,2,-1,2,1,-1,2,1};
+		int a[] = {1, 2, 2};
 		System.out.println(permuteUnique(a));
 	}
 
