@@ -1,4 +1,4 @@
-package twosigma;
+package predict;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package twosigma;
+package predict;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class JumbleSort {
+public class SpecialSort {
 
 	/**
 	 * Since we assume the input will be valid, 
@@ -25,7 +25,7 @@ public class JumbleSort {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		JumbleSort js = new JumbleSort();
+		SpecialSort js = new SpecialSort();
 		try {
 			String line = br.readLine();
 			ArrayList<String> res = js.processLine(line);
