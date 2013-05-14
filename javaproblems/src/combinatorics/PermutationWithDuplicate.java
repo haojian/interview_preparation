@@ -44,7 +44,7 @@ public class PermutationWithDuplicate {
 				if(num[i] == num[ei])
 					return false;
 			}
-			return true;
+		return true;
 	 }
 	 
 	 public static void swap(int[] num, int si, int ei){
