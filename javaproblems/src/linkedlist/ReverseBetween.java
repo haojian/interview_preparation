@@ -29,8 +29,8 @@ public class ReverseBetween {
             tNode = tNode.next;
         }
         ListNode nNxtcpy = tNode.next.next;
-        mpreNode.next = reverseList(mpreNode.next, tNode.next);
-        newNcpy.next = nNextcpy;
+        //mpreNode.next = reverseList(mpreNode.next, tNode.next);
+        //newNcpy.next = nNextcpy;
         
         return pseudo.next;
     }
@@ -40,7 +40,7 @@ public class ReverseBetween {
 		pseudo.next = start;
 		ListNode tNode = pseudo;
 		while(tNode != end){
-			ListNode tCpy = tNode;
+			ListNode   tCpy = tNode;
 			tNode = tNode.next;
 		}
 		return pseudo.next;
