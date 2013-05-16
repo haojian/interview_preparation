@@ -1,6 +1,7 @@
-========================
+﻿========================
 What happens behind the scenes when we type www.cnn.com in a browser and how does information gets displayed on the screen?
 ========================
+http://www.cnblogs.com/wenanry/archive/2010/02/25/1673368.html
 
 
 The browser resolves the URI* to an IP address.

@@ -1,6 +1,6 @@
-package graph;
+package array;
 
-public class QuoraNearBy {
+public class LargestKthNum {
 
 	/**
 	 * @param args
@@ -11,5 +11,3 @@ public class QuoraNearBy {
 	}
 
 }
-
-
