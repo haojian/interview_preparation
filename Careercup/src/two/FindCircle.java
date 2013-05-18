@@ -1,6 +1,6 @@
-package one;
+package two;
 
-public class One {
+public class FindCircle {
 
 	/**
 	 * @param args
@@ -10,4 +10,8 @@ public class One {
 
 	}
 
+	
+	public static ListNode findCircular(ListNode head){
+		return head;
+	}
 }
