@@ -1,5 +1,8 @@
 package string;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class WildCardMatching {
 
 	/**
@@ -7,8 +10,8 @@ public class WildCardMatching {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "aa";
-		String p = "a*";
+		String s = "abc";
+		String p = "*?*?*?*?";
 		System.out.println(isMatch(s, p));
 	}
 
@@ -16,9 +19,69 @@ public class WildCardMatching {
         // Start typing your Java solution below
         // DO NOT write main() function
         //return isMatchRecur(s, p, 0, 0);
-    	return isMatchDP(s, p);
+    	//return isMatchDP(s, p);
+    	return isMatchGreedy(s, p);
     }
     
+    public static boolean isMatchGreedy(String s, String p){
+    	if(p.length() == 0) return p.length() == s.length();
+    	int psi = 0; 
+    	int ssi = 0; 
+    	
+    	while(ssi<s.length() && psi<p.length() && p.charAt(psi)!='*'){
+    		if(s.charAt(ssi) == p.charAt(psi) || p.charAt(psi) == '?')
+    		{
+    			ssi++;
+    			psi++;
+    		}else
+    			return false;
+    	}
+    	s= s.substring(ssi);
+    	p = p.substring(psi);
+    	int sei = s.length()-1;
+    	int pei = p.length()-1;
+    	while(sei>=0 && pei>=0 && p.charAt(pei) != '*'){
+    		if(s.charAt(sei) == p.charAt(pei) || p.charAt(pei) == '?')
+    		{
+    			sei--;
+    			pei--;
+    		}else
+    			return false;
+    	}
+    	s= s.substring(0, sei+1);
+    	p=p.substring(0, pei+1);
+    	
+    	System.out.println(s+"\n"+p);
+    	String[] pstrs = p.split("[*]");
+    	for(String pstr:pstrs){
+    		if(pstr.length() == 0)
+    			continue;
+    		int index = findFirstIndex(s, pstr);
+    		if(index == -1)
+    			return false;
+    		s = s.substring(index+pstr.length());
+    	}
+    	if(!p.endsWith("*") && s.length() != 0)
+    		return false;
+    	return true;
+
+    }
+    
+    public static int findFirstIndex(String s, String p){
+    	int si = 0;
+    	int pi = 0;
+    	while(si<=s.length()-p.length() && pi<p.length()){
+    		int offset = 0;
+    		for(offset = 0; offset <p.length(); offset++){
+    			if(s.charAt(offset+si) != p.charAt(offset+pi) && p.charAt(offset+pi)!='?')
+    				break;
+    		}
+    		if(offset==p.length())
+    			return si;
+    		si++;
+    	}
+    	return -1;
+    }
     
     //Memory Limit Exceeded
     public static boolean isMatchDP(String s, String p){

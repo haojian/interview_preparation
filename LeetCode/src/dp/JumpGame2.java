@@ -7,8 +7,29 @@ public class JumpGame2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] input={2,3,1,1,4};
-		System.out.println(jump(input));
+		int[] input={0,0,0,0,0};
+		System.out.println(jumpGreedy(input));
+	}
+	
+	public static int jumpGreedy(int[] A){
+		if(A==null || A.length == 0)
+			return 0;
+		int curmax = 0;
+		int lastlvlmax = 0;
+		int steps = 0;
+		
+		for(int i=0; i<A.length-1;i++){
+			if(i>lastlvlmax){
+				lastlvlmax = curmax;
+				curmax = Math.max(A[i]+i, curmax);
+				steps++;
+			}else{
+				curmax = Math.max(A[i]+i, curmax);
+			}
+			if(A[i]+i>=A.length-1)
+				return steps+1;
+		}
+		return steps;
 	}
 	
 	//Time Limit Exceeded
