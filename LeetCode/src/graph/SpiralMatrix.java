@@ -10,7 +10,7 @@ public class SpiralMatrix {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[][] matrix = new int[10][1];
+		int[][] matrix = new int[1][2];
 		int counter=1;
 		for(int[] row:matrix){
 			for(int i=0; i<row.length;i++){
@@ -20,6 +20,43 @@ public class SpiralMatrix {
 		System.out.println(spiralOrder(matrix));
 	}
 
+    public static ArrayList<Integer> spiralOrder(int[][] matrix) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        if(matrix == null || matrix.length == 0)
+    		return res;
+        int rsi = 0;
+        int rei = matrix.length;
+        int csi = 0;
+        int cei = matrix[0].length;
+        while(rsi<rei && csi < cei){
+        	for(int i=csi; i<cei; i++){
+        		res.add(matrix[rsi][i]);
+        	}
+        	rsi++;
+        	for(int i=rsi; i<rei; i++){
+        		res.add(matrix[i][cei-1]);
+        	}
+        	cei--;
+        	if(rsi < rei){
+        		for(int i=cei-1; i>=csi; i--){
+        			res.add(matrix[rei-1][i]);
+        		}
+        		rei--;
+        	}
+        	if(csi < cei){
+        		for(int i=rei-1; i>=rsi; i--){
+        			res.add(matrix[i][csi]);
+        		}
+        		csi++;
+        	}
+        }
+        return res;
+    }
+	
+	
+	/*
     public static ArrayList<Integer> spiralOrder(int[][] matrix) {
         // Start typing your Java solution below
         // DO NOT write main() function
@@ -51,4 +88,5 @@ public class SpiralMatrix {
     			res.add(matrix[matrix.length-1-depth-offset][depth]);
     	}
     }
+    */
 }
