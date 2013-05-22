@@ -4,7 +4,20 @@ What happens behind the scenes when we type www.cnn.com in a browser and how doe
 http://www.cnblogs.com/wenanry/archive/2010/02/25/1673368.html
 
 
-The browser resolves the URI* to an IP address.
+1. 首先嘛，你得在浏览器里输入要网址:
+2. 浏览器查找域名的IP地址
+3. 浏览器给web服务器发送一个HTTP请求
+4. facebook服务的永久重定向响应
+5. 浏览器跟踪重定向地址
+6. 服务器“处理”请求
+7. 服务器发回一个HTML响应
+8. 浏览器开始显示HTML
+9. 浏览器发送获取嵌入在HTML中的对象
+10. 浏览器发送异步（AJAX）请求
+
+
+
+The browser resolves the URI* to an IP address by DNS resolution.
 The browser sends a GET request to that IP.
 The server finds the correct file.
 The server processes the file.
