@@ -21,7 +21,27 @@ public class InsertInterval {
 		insert(input, new Interval(4, 9));
 		System.out.println(input);
 	}
-
+    public static ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<Interval> res = new ArrayList<Interval>();
+        Interval tmp = newInterval;
+        for(Interval i:intervals){
+        	if(i.end < tmp.start)
+        		res.add(i);
+        	else if(i.start > tmp.end){
+        		res.add(tmp);
+        		tmp = i;
+        	}
+        	else{
+        		tmp = new Interval(Math.min(i.start, tmp.start), Math.max(i.end, tmp.end));
+        	}
+        }
+        res.add(tmp);
+        return res;
+    }
+	
+	/*
 	 public static ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
 	        // Start typing your Java solution below
 	        // DO NOT write main() function
@@ -36,6 +56,7 @@ public class InsertInterval {
 	    			flag[1] = i;
 	    	}
 	    	if(flag[0] == -1 && flag[1] == -1){
+	    		
 	    		intervals.add(newInterval);
 	    	}
 	    	else if(flag[0] == -1){
@@ -57,6 +78,7 @@ public class InsertInterval {
 	    	//Collections.sort(intervals, comp);
 			return intervals;
 	    }
+	    */
 	/*
     public static ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
         // Start typing your Java solution below
