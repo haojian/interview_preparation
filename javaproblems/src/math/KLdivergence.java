@@ -21,7 +21,14 @@ public class KLdivergence {
 
 		double[] p9= {0.23};
 		double[] p10={60};  //-1.8462525107450332   481.6310897595738
-		System.out.println(klDivergence(p10, p9));
+		
+		double[] p11= {0.90};
+		double[] p12={0.90};  
+		
+		double[] p13= {0.20};  //22.27238809148561
+		double[] p14={0.20};  //8.744691179161412
+		System.out.println((klDivergence_smoothing(p11, p12)+klDivergence_smoothing(p12, p11))/2);
+		System.out.println((klDivergence_smoothing(p13, p14)+klDivergence_smoothing(p13, p14))/2);
 	}
 	public static final double log2 = Math.log(2);
 
@@ -45,6 +52,17 @@ public class KLdivergence {
     	}
     	if(klDiv == 0)
     		klDiv = Double.MAX_VALUE;
+    	return klDiv / log2; // moved this division out of the loop -DM
+    }
+    
+    public static double klDivergence_smoothing(double[] p1, double[] p2) {
+    	if(p1.length != p2.length)
+    		return -1;
+    	double klDiv = 0.0;
+    	for (int i = 0; i < p1.length; ++i) {
+    		klDiv += p1[i] * Math.log( (p1[i]+0.00001) / (p2[i]+0.00001));
+    	}
+
     	return klDiv / log2; // moved this division out of the loop -DM
     }
 }

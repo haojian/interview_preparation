@@ -29,6 +29,8 @@ public class MaximumSubarray {
     //additional approach
 	//divide and conquer approach
     
+    
+    //inplace solution.
     public static int maxSubArrayInplace(int[] A){
         if(A== null ||A.length ==0)
             return 0;
