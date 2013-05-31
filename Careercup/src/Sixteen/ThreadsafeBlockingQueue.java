@@ -17,7 +17,6 @@ public class ThreadsafeBlockingQueue {
 		Thread producer = new Thread(new Producer(queue));
 		consumer.start();
 		producer.start();
-	
 	}
 
 }
