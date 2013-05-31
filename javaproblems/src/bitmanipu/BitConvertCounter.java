@@ -19,7 +19,7 @@ public class BitConvertCounter {
 			if(tmp % 2 == 1){
 				counter++;	
 			}
-				tmp/=2;
+			tmp/=2;
 		}
 		System.out.println(counter);
 		return counter;

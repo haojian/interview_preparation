@@ -33,7 +33,7 @@ public class DiagnoalMatrix {
 		for(; curXYSum<2*n-1; curXYSum++){
 			for(int j=n-1; j>=0; j--)  // j is the column
 			{
-				if(matrix[i][j])
+				//if(matrix[i][j])
 			}
 		}
 		for(int i=0; i<n;i++){
@@ -43,7 +43,7 @@ public class DiagnoalMatrix {
 			curXYSum++;
 		}
 		for(int i=2; i<n; i++){ //i is the row
-			for(j=)
+			//for(j=)
 			
 		}
 	}

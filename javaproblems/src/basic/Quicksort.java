@@ -32,7 +32,6 @@ public class Quicksort {
 				i++;
 				exchange(A, j, i);
 			}
-			
 		}
 		exchange(A, i+1, ei);
 		return i+1;

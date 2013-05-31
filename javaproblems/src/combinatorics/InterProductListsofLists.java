@@ -60,22 +60,6 @@ public class InterProductListsofLists {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void process(ArrayList<ArrayList<String>> listsoflists){
 		ArrayList<ArrayList<String>> outputset = new ArrayList<ArrayList<String>>();
 		for(ArrayList<String> list: listsoflists){

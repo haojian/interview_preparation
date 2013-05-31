@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class PeakValueStack {
 
-	/**
+	/** this version contains bugs. check the right version in careercup project.
 	 * @param args
 	 */
 	public static void main(String[] args) {

@@ -3,6 +3,13 @@ package mathprob;
 public class Sqrt {
 
 	/**
+	 * 
+	 * Computational complexity
+
+Using Newton's method as described above, the time complexity of calculating a root of a function  with -digit precision, provided that a good initial approximation is known, is  where  is the cost of calculating  with -digit precision.
+	 * http://en.citizendium.org/wiki/Newton's_method#Computational_complexity
+	 * 
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
