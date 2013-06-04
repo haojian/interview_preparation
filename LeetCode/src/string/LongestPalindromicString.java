@@ -9,7 +9,7 @@ public class LongestPalindromicString {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(longestPalindrome("abaaba"));
+		System.out.println(longestPalindrome("aaba"));
 	}
 
     public static String longestPalindrome(String s) {
