@@ -10,7 +10,10 @@ public class ReversePolishNotation {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		String input = "abcd 123 + 2 - 2";
+		Scanner scan = new Scanner(input);
+		while(scan.hasNext())
+			System.out.println(scan.next());
 	}
 	
 	 public static boolean nextIsOperator(String next) {
