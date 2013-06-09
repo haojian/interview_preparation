@@ -6,6 +6,10 @@ import java.util.Random;
 public class Twentyfour {
 
 	/**
+	 * 
+	 * One proble need to clarify is how to define 7/6.
+	 * 7/6 =1 in current case.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
