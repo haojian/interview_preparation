@@ -60,6 +60,7 @@ Grammer:
 
     			if(ifCouldDot){
     				ifCouldDot = false;
+    				ifCouldsign = false;
     			}else{
     				return false;
     			}
