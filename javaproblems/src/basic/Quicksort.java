@@ -15,7 +15,6 @@ public class Quicksort {
 	}
 
 	
-	
 	public static void quicksort(int A[], int si, int ei){
 		if(si < ei){
 			int p = partition(A, si, ei);
