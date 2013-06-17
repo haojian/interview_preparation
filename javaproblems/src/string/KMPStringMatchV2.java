@@ -14,7 +14,7 @@ public class KMPStringMatchV2 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(Arrays.toString(getNext("issip")));
+		System.out.println(Arrays.toString(getNext("abab")));
 		System.out.println(strStr("mississippi", "issip"));
 	}
 	

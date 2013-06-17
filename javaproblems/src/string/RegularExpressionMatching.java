@@ -28,6 +28,12 @@ public class RegularExpressionMatching {
 		return false;
 	}
 	
+	
+	//four cases:
+	//1. s finished; p processed => true
+	//2. s not finish; p finished => false;
+	//3. s finished; p not finished => depends on if p end with *
+	//4. s not finish and p not finish => depends on if match. and write recursive function for "*";
 	public static boolean isRecursiveMatch(String s, String p, int si, int pi){
 		if(s.length() == si && pi == p.length())
 			return true;
