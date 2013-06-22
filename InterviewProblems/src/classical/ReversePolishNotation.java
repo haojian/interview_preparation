@@ -11,9 +11,8 @@ public class ReversePolishNotation {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String input = "abcd 123 + 2 - 2";
-		Scanner scan = new Scanner(input);
-		while(scan.hasNext())
-			System.out.println(scan.next());
+		System.out.println(calcRPN(input));
+		 
 	}
 	
 	 public static boolean nextIsOperator(String next) {
@@ -47,6 +46,7 @@ public class ReversePolishNotation {
 					}
 				}else{
 					 System.out.println(" too many operators");
+					 return 0;
 				}
 			}else{
 				
@@ -54,6 +54,7 @@ public class ReversePolishNotation {
 		}
 		if(stack.size() >1){
 			 System.out.println("There too many numbers and not enough mathematical operators with which to evaluate them.");
+			 return 0;
 		}
 		return stack.pop();
 	}
