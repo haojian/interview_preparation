@@ -9,7 +9,7 @@ public class PrimeNumber {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		getPrimeNum(100);
+		getPrimeNum(5);
 	}
 	
 	public static void getPrimeNum(int N){

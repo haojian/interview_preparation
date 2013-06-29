@@ -32,6 +32,9 @@ public class FindNthLargest {
 
 class Node{
 	int val;
-	Node left;
-	Node right;
+	Node left = null;
+	Node right = null;
+	public Node(int _val){
+		val = _val;
+	}
 }
